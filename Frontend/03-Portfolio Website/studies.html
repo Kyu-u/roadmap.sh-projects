@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- SEO Meta Tags -->
+        <meta name="description" content="A Portfolio Website showcasing my studies">
+        <meta name="keywords" content="HTML, website, basic, frontend, development, portfolio">
+        <meta name="author" content="France Jacob B. Escopete">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="styles.css">
+        <title>Studies - Portfolio Website</title>
+    </head>
+
+    <body>
+        <header>
+            <div class="logo">
+                <img src="Assets/logo.jpg" alt="Logo">   
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="studies.html">Studies</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <button class="theme-toggle" onclick="toggleTheme()">
+                <svg id="sun_icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" class="feather feather-moon">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+
+                <svg id="moon_icon" style="display: none;" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" class="feather feather-sun">
+                <circle cx="12" cy="12" r="5"></circle>
+                 <line x1="12" y1="1" x2="12" y2="3"></line>
+                 <line x1="12" y1="21" x2="12" y2="23"></line>
+                 <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                 <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                 <line x1="1" y1="12" x2="3" y2="12"></line>
+                 <line x1="21" y1="12" x2="23" y2="12"></line>
+                 <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                 <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                </svg>
+            </button>
+        </header>
+
+        <main>
+            <section class="studies">
+                <h1>Studies</h1>
+                <ul>
+                    <li>
+                        <h2>VINEAR: Vine‑Inspired Navigational Explorer using Artificial Intelligence for Rescue</h2>
+                        <p>A research project focused on developing an AI-powered navigation system inspired by vine growth patterns for rescue operations in challenging terrains.</p>
+                    </li>
+                    <li>
+                        <h2>Cloacator: Smart Self-Cleaning Sewage Grate with IoT Integration</h2>
+                        <p>A project that utilizes Arduino technology to create a flood control system, incorporating an ultrasonic sensor and a dc motor.</p>
+                    </li>
+                    <li>
+                        <h2>Strings of Tradition: Challenges of Lapu-Lapu City Guitar-Makers in the Era of Mass-Produced Instruments</h2>
+                        <p>A study examining the impact of mass-produced instruments on traditional guitar-making practices in Lapu-Lapu City.</p>
+                    </li>
+                </ul>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 France Jacob B. Escopete. All rights reserved.</p>
+        </footer>
+        <script src="script.js"></script>
+    </body>
+</html>
