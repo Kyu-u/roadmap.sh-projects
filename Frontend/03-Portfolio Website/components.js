@@ -2,7 +2,7 @@ function loadHeader() {
   const header = `
     <header>
       <div class="logo">
-        <img src="../../Assets/logo.jpg" alt="Logo">
+        <img src="logo.jpg" alt="Logo">
       </div>
       <nav>
         <ul>
