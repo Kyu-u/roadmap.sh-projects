@@ -53,10 +53,8 @@ svg {
 
 /* Header */
 .logo {
-  font-size: 2rem;
-  font-weight: bold;
-  font-family: 'Rosarivo', cursive;
-  font-style: normal;
+  display : flex;
+  align-items: center;
 }
 
 .logo img {
@@ -83,11 +81,7 @@ nav ul li a {
   margin: 0 0.25rem;
 }
 
-nav ul li a:hover {
-  outline: 1px solid var(--accent-color);
-  border-radius: 5px;
-}
-
+nav ul li a:hover,
 nav ul li a.active {
   outline: 1px solid var(--accent-color);
   border-radius: 5px;
@@ -107,12 +101,12 @@ main {
   gap: 2rem;
 }
 
-.hero {
+.intro {
   text-align: center;
 }
 
 /* Sections */
-.hero,
+.intro,
 .projects,
 .work-experience,
 .education {
@@ -213,7 +207,7 @@ button:active {
 }
 
 /* Dark Mode Toggle Button */
-.toggle-theme {
+.theme-toggle {
   cursor: pointer;
   padding: 0.5rem;
   border: none;
