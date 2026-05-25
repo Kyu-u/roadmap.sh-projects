@@ -5,62 +5,53 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <!-- SEO Meta Tags -->
-        <meta name="description" content="A simple HTML website">
-        <meta name="keywords" content="HTML, website, basic, frontend, development">
+        <meta name="description" content="A Portfolio Website">
+        <meta name="keywords" content="HTML, website, basic, frontend, development, portfolio">
         <meta name="author" content="France Jacob B. Escopete">
-        <title>Basic HTML Website</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="styles.css">
+        <title>Portfolio Website</title>
     </head>
 
     <body>
-        <header>
-            <div class="logo">
-                <img width="64" src="D:\Random BS\Roadmap.sh Projects\Assets\logo.jpg" alt="Logo">   
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="studies.html">Studies</a></li>
-                    <li><a href="projects.html">Projects</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
-        </header>
-
         <main>
             <section class="intro">
                 <h1>IT Student</h1>
                 <p>Incoming First Year Student</p>
             </section>
-
-            <section class="projects">
-                <h2>Projects</h2>
-                <ul>
-                    <li>Vine Robot</li>
-                    <li>Arduino Floodcontrol</li>
-                    <li>Textfilter Tool</li>
-                    <li>Lemoncito Coupon App</li>
-                    <li>Personal Portfolio Website</li>
-                    <li>Discord Bot for Slurs</li>
-                </ul>
-            </section>
             
-            <section class="work-experience">
-                <h2>Work Experience</h2>
-                <ul>
-                    <li>Work Immersion at Smartsourcing</li>
-                    <li>Freelance Virtual Assistant</li>
-                </ul>
-            </section>
+            <div class="flex-wrapper">
+                <section class="projects">
+                    <h2>Projects</h2>
+                    <ul>
+                        <li>Vine Robot</li>
+                        <li>Arduino Floodcontrol</li>
+                        <li>Textfilter Tool</li>
+                        <li>Lemoncito Coupon App</li>
+                        <li>Personal Portfolio Website</li>
+                        <li>Discord Bot for Slurs</li>
+                    </ul>
+                </section>
 
-            <section class="education">
-                <h2>Education</h2>
-                <ul>
-                    <li>Senior High School STEM - Cebu City National Science High School</li>
-                    <li>Junior High School Emath Elective - Cebu City National Science High School</li>
-                    <li>Elementary School - Guadalupe Elementary School</li>
-                </ul>
-            </section>
+                <section class="work-experience">
+                    <h2>Work Experience</h2>
+                    <ul>
+                        <li>Work Immersion at Smartsourcing</li>
+                        <li>Freelance Virtual Assistant</li>
+                    </ul>
+                </section>
+            
+                <section class="education">
+                    <h2>Education</h2>
+                    <ul>
+                        <li>Senior High School STEM - Cebu City National Science High School</li>
+                        <li>Junior High School Emath Elective - Cebu City National Science High School</li>
+                        <li>Elementary School - Guadalupe Elementary School</li>
+                    </ul>
+                </section>
+            </div>
 
             <aside class="reviews">
                 <h2>Reviews</h2>
@@ -75,5 +66,8 @@
                 </blockquote>
             </aside>
         </main>
+
+        <script src="components.js"></script>
+        <script src="script.js"></script>
     </body>
 </html>
