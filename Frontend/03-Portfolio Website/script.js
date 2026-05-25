@@ -31,5 +31,3 @@ function toggleTheme() {
   const current = getSavedTheme();
   applyTheme(getOppositeTheme(current));
 }
-
-applyTheme(getSavedTheme() ?? DEFAULT_THEME);
