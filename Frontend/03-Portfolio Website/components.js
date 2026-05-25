@@ -2,7 +2,7 @@ function loadHeader() {
   const header = `
     <header>
       <div class="logo">
-        <img src="logo.jpg" alt="Logo">
+        <img src="../../Assets/logo.jpg" alt="Logo">
       </div>
       <nav>
         <ul>
@@ -45,8 +45,6 @@ function loadFooter() {
   document.body.insertAdjacentHTML('beforeend', footer);
 }
 
-loadHeader();
-loadFooter();
 
 function setActiveNavLink() {
   const currentPage = window.location.pathname.split('/').pop();
@@ -57,4 +55,7 @@ function setActiveNavLink() {
   });
 }
 
+loadHeader();
+loadFooter();
 setActiveNavLink();
+applyTheme(getSavedTheme() ?? DEFAULT_THEME);
