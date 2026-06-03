@@ -1,0 +1,101 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+:root {
+    --border: 1px solid #ccc;
+    --cell: 30px;
+    --radius: 4px;
+}
+
+.datepicker {
+    position: relative;
+    display: inline-block;
+    margin: 20px;
+}
+
+.datepicker-input {
+    display: flex;
+    align-items: center;
+    border: var(--border);
+    border-radius: var(--radius);
+    padding: 5px;
+    width: 200px;
+}
+
+.datepicker-input input {
+    border: none;
+    outline: none;
+    flex-grow: 1;
+    padding: 5px;
+}
+
+/* Merged: both buttons share the same reset */
+.datepicker-input button,
+.calendar-header button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.calendar-header button {
+    font-size: 18px;
+}
+
+.calendar {
+    position: absolute;
+    top: 45px;
+    border: var(--border);
+    border-radius: var(--radius);
+    background: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 250px;
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background: #f4f4f4;
+    border-bottom: var(--border);
+}
+
+.calendar-body { padding: 10px; }
+
+/* Merged: both rows share the same flex layout */
+.day-names,
+.days {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.day-names { margin-bottom: 5px; }
+
+/* Merged: both cell types share width and alignment */
+.day-names span,
+.days span {
+    width: var(--cell);
+    text-align: center;
+}
+
+.day-names span {
+    font-weight: bold;
+    color: #555;
+}
+
+.days span {
+    height: var(--cell);
+    line-height: var(--cell);
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
+.days span:hover {
+    background: #eee;
+    border-radius: 50%;
+}
