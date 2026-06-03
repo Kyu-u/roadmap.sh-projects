@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datepicker UI</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div class="datepicker">
+      <div class="datepicker-input">
+        <input type="text" placeholder="dd / mm / yyyy">
+        <button class="datepicker-icon">📅</button>
+      </div>
+
+      <div class="calendar">
+        <div class="calendar-header">
+          <button class="prev">◀</button>
+          <span class="month-year">September 2024</span>
+          <button class="next">▶</button>
+        </div>
+        <div class="calendar-body">
+          <div class="day-names">
+            <span>S</span><span>M</span><span>T</span><span>W</span>
+            <span>T</span><span>F</span><span>S</span>
+          </div>
+          <div class="days"></div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // September 2024: 30 days + 4 overflow days from October to fill the grid
+      const days = [...Array(30)].map((_, i) => i + 1)
+                   .concat([1, 2, 3, 4]);
+      document.querySelector('.days').innerHTML =
+        days.map(d => `<span>${d}</span>`).join('');
+    </script>
+  </body>
+</html>
