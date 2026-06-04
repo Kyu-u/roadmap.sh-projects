@@ -1,0 +1,204 @@
+/* ─── Design Tokens ─────────────────────────────────────── */
+:root {
+  --bg:             #181818;
+  --form-bg:        rgba(255,255,255,.10);
+  --form-border:    rgba(255,255,255,.18);
+  --input-bg:       rgba(255,255,255,.10);
+  --input-border:   rgba(255,255,255,.20);
+  --text:           #fff;
+  --muted:          #b0b0b0;
+  --error:          #ff6b6b;
+  --accent:         #ffbb33;
+  --progress-fill:  linear-gradient(90deg, #ffbb33, #ff8c00);
+  --complete-text:  #6b6b6b;
+  --btn-bg:         rgba(0,0,0,.60);
+  --btn-hover:      rgba(255,136,0,.70);
+  --footer-bg:      rgba(255,255,255,.05);
+  --footer-shadow:  inset 0 4px 10px rgba(0,0,0,.30);
+  --shadow:         0 8px 32px rgba(0,0,0,.37);
+  --focus-glow:     rgba(255,187,51,.60);
+}
+
+/* Light theme — add class="light-theme" to <body> to activate */
+.light-theme {
+  --bg:             #f0f0f0;
+  --form-bg:        rgba(0,0,0,.05);
+  --form-border:    rgba(0,0,0,.15);
+  --input-bg:       rgba(0,0,0,.05);
+  --input-border:   rgba(0,0,0,.20);
+  --text:           #000;
+  --muted:          #666;
+  --error:          #d9534f;
+  --accent:         #0275d8;
+  --progress-fill:  linear-gradient(90deg, #0275d8, #5bc0de);
+  --complete-text:  #999;
+  --btn-bg:         rgba(160,160,160,.70);
+  --btn-hover:      rgba(2,117,216,.70);
+  --footer-bg:      rgba(0,0,0,.05);
+  --footer-shadow:  inset 0 4px 10px rgba(0,0,0,.10);
+  --shadow:         0 4px 16px rgba(0,0,0,.15);
+  --focus-glow:     rgba(2,117,216,.60);
+}
+
+/* ─── Base ───────────────────────────────────────────────── */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* ─── Form Container ─────────────────────────────────────── */
+.form-container {
+  background: var(--form-bg);
+  border: 1px solid var(--form-border);
+  border-radius: 20px;
+  padding: 2rem;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(10px);
+}
+
+.form-group { margin-bottom: 1.5rem; }
+
+/* ─── Labels ─────────────────────────────────────────────── */
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: .5rem;
+}
+
+/* ─── Inputs ─────────────────────────────────────────────── */
+input[type='text'],
+input[type='email'],
+input[type='password'] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--input-border);
+  border-radius: 12px;
+  background: var(--input-bg);
+  color: var(--text);
+  font-size: 1rem;
+  outline: none;
+  box-shadow: inset 0 4px 10px rgba(0,0,0,.20);
+  box-sizing: border-box;
+}
+
+input::placeholder { color: var(--muted); }
+
+input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 10px var(--focus-glow);
+}
+
+/* Visible focus ring for keyboard navigation */
+input:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* ─── Error Message ──────────────────────────────────────── */
+.error-message {
+  display: block;
+  color: var(--error);
+  font-size: .875rem;
+  margin-top: .25rem;
+}
+
+/* ─── Password Toggle ────────────────────────────────────── */
+.password-group { position: relative; }
+
+.toggle-password {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(15%);
+  background: none;
+  border: none;
+  color: var(--accent);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 4px;
+}
+
+/* icon-hide is off by default; JS will toggle aria-pressed to swap them */
+.toggle-password .icon-hide                       { display: none; }
+.toggle-password[aria-pressed="true"] .icon-show  { display: none; }
+.toggle-password[aria-pressed="true"] .icon-hide  { display: block; }
+
+/* ─── Submit Button ──────────────────────────────────────── */
+.update-profile-btn {
+  width: 100%;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 12px;
+  background: var(--btn-bg);
+  color: var(--text);
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0,0,0,.50);
+  transition: background .3s ease;
+}
+
+.update-profile-btn:hover { background: var(--btn-hover); }
+
+/* ─── Progress Bar ───────────────────────────────────────── */
+.progress-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.progress-bar {
+  width: 60%;
+  height: 10px;
+  background: var(--input-bg);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.progress {
+  width: 65%;
+  height: 100%;
+  background: var(--progress-fill);
+  border-radius: 5px;
+}
+
+.progress-percentage {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: var(--accent);
+}
+
+/* ─── Checklist ──────────────────────────────────────────── */
+.form-footer {
+  background: var(--footer-bg);
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: var(--footer-shadow);
+}
+
+.checklist {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.checklist li {
+  margin-bottom: .5rem;
+  color: var(--complete-text);
+  text-decoration: line-through;
+}
+
+.checklist li.incomplete {
+  color: var(--text);
+  text-decoration: none;
+}
