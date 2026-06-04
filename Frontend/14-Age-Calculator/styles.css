@@ -1,0 +1,108 @@
+    /* ── Reset & base ──────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #fff;
+      color: #111;
+      font-family: 'Nunito', sans-serif;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 2rem 1rem;
+    }
+
+    /* ── Layout ────────────────────────────────────────────── */
+    .card {
+      width: 100%;
+      max-width: 680px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2.8rem;
+      font-weight: 800;
+      margin-bottom: 2rem;
+    }
+
+    /* ── Form ──────────────────────────────────────────────── */
+    label {
+      display: block;
+      font-size: 1rem;
+      font-weight: 400;
+      text-align: left;
+      margin-bottom: 0.5rem;
+    }
+
+    /* Wrapper positions the calendar icon inside the input */
+    .input-wrap {
+      position: relative;
+    }
+
+    /* The datepicker attaches to this input */
+    #birthdate {
+      width: 100%;
+      border: 2px solid #111;
+      border-radius: 10px;
+      font-family: inherit;
+      font-size: 1.1rem;
+      padding: 0.85rem 3rem 0.85rem 1rem; /* right padding leaves room for icon */
+      cursor: pointer;
+      background: #fff;
+      color: #111;
+      transition: border-color 0.2s;
+    }
+    #birthdate:focus { outline: none; border-color: #555; }
+
+    /* SVG calendar icon — purely decorative, sits inside the input */
+    .input-wrap svg {
+      position: absolute;
+      right: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      pointer-events: none; /* clicks pass through to the input */
+      color: #555;
+    }
+
+    .error {
+      color: #c0392b;
+      font-size: 0.85rem;
+      margin-top: 0.4rem;
+      min-height: 1.2em;
+      text-align: left;
+    }
+
+    button {
+      width: 100%;
+      margin-top: 0.75rem;
+      padding: 0.9rem;
+      background: #555;
+      border: none;
+      border-radius: 10px;
+      color: #fff;
+      font-family: inherit;
+      font-size: 1.1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    button:hover { background: #333; }
+
+    /* ── Result ────────────────────────────────────────────── */
+    .result {
+      margin-top: 1.75rem;
+      font-size: 1.3rem;
+      display: none;
+    }
+    .result.visible { display: block; }
+    .result strong { font-weight: 800; }
+
+    /* ── Override datepicker calendar theme ────────────────── */
+    .qs-datepicker-container {
+      font-family: 'Nunito', sans-serif;
+      border-radius: 10px;
+      border: 2px solid #111;
+    }
+    .qs-active {
+      background: #555 !important;
+      border-radius: 6px;
+    }
