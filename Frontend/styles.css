@@ -1,0 +1,47 @@
+/* ── Base image styles ── */
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ── Grid container ── */
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  min-height: 600px; /* gives rows a concrete height to fill */
+  gap: 10px;
+}
+
+/* ── Mosaic placement (desktop) ── */
+.image-grid img:nth-child(1) { grid-area: 1 / 1 / 3 / 2; }
+.image-grid img:nth-child(2) { grid-area: 3 / 1 / 4 / 2; }
+.image-grid img:nth-child(3) { grid-area: 1 / 2 / 2 / 3; }
+.image-grid img:nth-child(4) { grid-area: 2 / 2 / 4 / 3; }
+.image-grid img:nth-child(5) { grid-area: 1 / 3 / 3 / 4; }
+.image-grid img:nth-child(6) { grid-area: 3 / 3 / 4 / 4; }
+
+/* ── Tablet: 2-column, sequential flow ── */
+@media (max-width: 600px) {
+  .image-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr); /* auto would also work */
+    min-height: 400px;
+  }
+
+  /* Reset explicit placement — grid auto-places sequentially */
+  .image-grid img { grid-area: auto; }
+}
+
+/* ── Mobile: single column stack ── */
+@media (max-width: 400px) {
+  .image-grid {
+    grid-template-columns: 1fr;
+    min-height: unset; /* let images define their own height */
+  }
+
+  .image-grid img {
+    aspect-ratio: 4 / 3; /* give each image a natural height */
+  }
+}
