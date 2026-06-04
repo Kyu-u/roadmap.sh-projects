@@ -1,0 +1,71 @@
+/* ── Layout ── */
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  max-width: 600px;
+  margin: auto;
+}
+
+/* ── Accordion structure ── */
+.accordion-item {
+  border: 1px solid #ddd;
+  margin-bottom: 5px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+/* ── Header button ── */
+.accordion-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  font-size: 16px;
+  background-color: #f1f1f1;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  transition: background-color 0.3s ease;
+}
+
+.accordion-header:hover,
+.accordion-item.active .accordion-header {
+  background-color: #ddd;
+}
+
+/* ── Chevron rotation ── */
+.accordion-item.active .accordion-header img {
+  transform: rotate(180deg);
+}
+
+/* ── Collapsible content ── */
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  background-color: white;
+  transition: max-height 0s ease-in-out; /* instant on close */
+}
+
+.accordion-content p {
+  margin: 10px 15px;  /* moved padding here to avoid padding on hidden content */
+}
+
+.accordion-item.active .accordion-content {
+  max-height: 200px;
+  transition: max-height 0.3s ease-in-out; /* animated on open */
+}
+
+.accordion-header::after {
+  content: '';
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-right: 2px solid #333;
+  border-bottom: 2px solid #333;
+  transform: rotate(45deg); /* points down */
+  transition: transform 0.3s ease;
+}
+
+.accordion-item.active .accordion-header::after {
+  transform: rotate(-135deg); /* points up */
+}
