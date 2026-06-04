@@ -1,0 +1,84 @@
+/* ─── Base ──────────────────────────────────────────── */
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #f4f4f4;
+}
+
+/* ─── Nav item ──────────────────────────────────────── */
+.nav-item {
+  position: relative; /* makes .tooltip position relative to this */
+  display: inline-block;
+  margin: 0 20px;
+  padding: 10px;
+  font-size: 18px;
+  color: #333;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.nav-item:hover { color: #0073e6; }
+
+/* ─── Tooltip ───────────────────────────────────────── */
+/*
+  CSS custom properties define the tooltip's OFF-state.
+  Each animation variant overrides only what it needs:
+    - .slide-in overrides --ty (vertical offset)
+    - .scale-in overrides --sc (scale)
+    - .fade-in needs nothing — opacity alone is the default
+*/
+.tooltip {
+  --ty: 0px; /* translateY offset in the hidden state */
+  --sc: 1;   /* scale in the hidden state             */
+
+  position: absolute;
+  bottom: 150%; /* sit above the nav item */
+  left: 50%;
+  width: 120px;
+  padding: 5px 0;
+  font-size: 14px;
+  text-align: center;
+  background: #333;
+  color: #fff;
+  border-radius: 5px;
+  pointer-events: none; /* prevent tooltip from triggering its own hover */
+
+  transform: translateX(-50%) translateY(var(--ty)) scale(var(--sc));
+  opacity: 0;
+  visibility: hidden;
+  /* delay visibility:hidden until AFTER the fade-out finishes */
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0s 0.3s;
+}
+
+/* Arrow — CSS triangle via border trick */
+.tooltip::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border: 5px solid transparent;
+  border-top-color: #333;
+}
+
+/* ─── Hover state (shared by all variants) ──────────── */
+/*
+  Reset custom properties back to their "visible" values.
+  Higher specificity (:hover) wins over variant rules above.
+  Remove visibility delay so the tooltip appears instantly.
+*/
+.nav-item:hover .tooltip {
+  --ty: 0px;
+  --sc: 1;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* ─── Animation variants (off-state only) ───────────── */
+.slide-in .tooltip { --ty: 10px; } /* starts 10px below, slides up */
+.scale-in .tooltip { --sc: 0;    } /* starts invisible, scales up  */
+/* .fade-in needs no rule — default --ty:0 --sc:1 means opacity is all that animates */
